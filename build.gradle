@@ -1,0 +1,51 @@
+plugins {
+    id 'org.springframework.boot' version '2.0.1.RELEASE'
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+}
+
+def bootVersion = '2.0.1.RELEASE'
+group 'joycai'
+version '1.0-SNAPSHOT'
+
+
+jar {
+    baseName = 'springbootWeb'
+    version  = version
+}
+
+sourceCompatibility = 1.8
+
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:$bootVersion")
+    compile("org.springframework.boot:spring-boot-starter-aop:$bootVersion")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa:$bootVersion")
+    compile("mysql:mysql-connector-java:6.0.6")
+
+    compile("org.slf4j:slf4j-api:1.7.21")
+    compile("ch.qos.logback:logback-classic:1.1.7")
+
+    compile("org.redisson:redisson:+")
+    compile("com.google.guava:guava:+")
+    testCompile("org.springframework.boot:spring-boot-starter-test:$bootVersion")
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+task wrapper(type:Wrapper){
+    gradleVersion = '4.6'
+}
+
+task createDirs {
+    sourceSets*.java.srcDirs*.each { it.mkdirs() }
+    sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
