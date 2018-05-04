@@ -1,6 +1,7 @@
 package joycai.springboot.controller;
 
 import joycai.springboot.repository.UserRepository;
+import joycai.springboot.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,11 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @Autowired
-    UserRepository userRepository;
+    UserAccountService userAccountService;
 
     @RequestMapping("test")
     public String test() {
-        Long userCount = userRepository.count();
-        return userCount+" users";
+        return "users 1";
     }
 }
