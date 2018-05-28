@@ -1,6 +1,5 @@
 package joycai.springboot.controller;
 
-import joycai.springboot.repository.UserRepository;
 import joycai.springboot.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

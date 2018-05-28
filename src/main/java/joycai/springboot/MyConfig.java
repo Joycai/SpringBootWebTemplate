@@ -14,12 +14,12 @@ public class MyConfig {
      * @return
      */
     @Bean
-    public WebMvcConfigurer crosConfigurer(){
+    public WebMvcConfigurer corsConfigurer(){
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 //这里加入cors的访问路径
-                registry.addMapping("*");
+                registry.addMapping("/**");
             }
         };
     }

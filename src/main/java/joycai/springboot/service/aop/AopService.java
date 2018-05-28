@@ -6,13 +6,15 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 @Aspect
 public class AopService {
 
     Logger logger = LoggerFactory.getLogger(AopService.class);
 
+    /**
+     * 定义一个切面
+     */
     @Pointcut("execution(* joycai.springboot.service.impl.UserAccountServiceImpl.*(..))")
     public void aspect() {
 
