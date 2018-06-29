@@ -1,21 +1,33 @@
-plugins {
-    id 'org.springframework.boot' version '2.0.1.RELEASE'
-    id 'java'
-    id 'idea'
-    id 'eclipse'
+buildscript {
+    ext{
+        javaVersion = 1.8
+        bootVersion = '2.0.3.RELEASE'
+        redissonVersion = '3.7.2'
+        guavaVsersion = '25.1-jre'
+    }
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$bootVersion")
+    }
 }
 
-def bootVersion = '2.0.1.RELEASE'
 group 'joycai'
 version '1.0-SNAPSHOT'
 
+apply plugin: 'war'
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 jar {
     baseName = 'springbootWeb'
     version  = version
 }
 
-sourceCompatibility = 1.8
+sourceCompatibility = javaVersion
 
 
 repositories {
@@ -32,8 +44,8 @@ dependencies {
     compile("org.slf4j:slf4j-api:1.7.21")
     compile("ch.qos.logback:logback-classic:1.1.7")
 
-    compile("org.redisson:redisson:+")
-    compile("com.google.guava:guava:+")
+    compile("org.redisson:redisson:$redissonVersion")
+    compile("com.google.guava:guava:$guavaVsersion")
     testCompile("org.springframework.boot:spring-boot-starter-test:$bootVersion")
 }
 
