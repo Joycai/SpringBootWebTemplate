@@ -10,17 +10,17 @@ import org.slf4j.LoggerFactory;
 @Aspect
 public class AopService {
 
-    Logger logger = LoggerFactory.getLogger(AopService.class);
+    private Logger logger = LoggerFactory.getLogger(AopService.class);
 
     /**
      * 定义一个切面
      */
-    @Pointcut("execution(* joycai.springboot.service.impl.UserAccountServiceImpl.*(..))")
+    @Pointcut(value = "execution(* joycai.springboot.service.impl.UserAccountServiceImpl.*(..))")
     public void aspect() {
 
     }
 
-    @Around("aspect()")
+    @Around(value = "aspect()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         logger.info("aop around");
         return joinPoint.proceed();

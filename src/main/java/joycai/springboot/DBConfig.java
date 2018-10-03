@@ -24,8 +24,8 @@ public class DBConfig {
      * @param password
      * @return
      */
-    @Bean(destroyMethod = "shutdown")
-    public DataSource getDataSource(@Value("#{ serviceConfig['mysql.url'] }") String url,
+    @Bean(destroyMethod = "close")
+    public HikariDataSource getDataSource(@Value("#{ serviceConfig['mysql.url'] }") String url,
                                     @Value("#{ serviceConfig['mysql.username'] }") String username,
                                     @Value("#{ serviceConfig['mysql.password'] }") String password) {
 

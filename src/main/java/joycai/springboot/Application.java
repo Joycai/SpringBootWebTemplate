@@ -43,6 +43,10 @@ public class Application {
         logger.info(debugMode ? "run in debug" : "run in release");
     }
 
+    /**
+     * 载入配置文件
+     * @return
+     */
     @Bean(name = "serviceConfig")
     public Properties appConfig() {
         try {

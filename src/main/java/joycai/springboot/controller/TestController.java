@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
+    private UserAccountService userAccountService;
+
     @Autowired
-    UserAccountService userAccountService;
+    public TestController(UserAccountService userAccountService) {
+        this.userAccountService = userAccountService;
+    }
 
     @RequestMapping("test")
     public String test() {

@@ -7,9 +7,13 @@ import org.springframework.stereotype.Service;
 
 @Service("UserAccountService")
 public class UserAccountServiceImpl implements UserAccountService {
-    @Autowired
-    UserRepository userRepository;
 
+    private UserRepository userRepository;
+
+    @Autowired
+    public UserAccountServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public Long countUser() {

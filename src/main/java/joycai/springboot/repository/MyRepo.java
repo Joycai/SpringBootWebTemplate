@@ -10,8 +10,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MyRepo {
 
+    private JdbcTemplate jdbcTemplate;
+
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    public MyRepo(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public void testConn() {
         String testQuery = "SELECT count(*) FROM table";
