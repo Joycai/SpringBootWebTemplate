@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="joycai-SpringBootWebTemplate_main" target="1.8" />
+      <module name="joycai-SpringBootWebTemplate_test" target="1.8" />
       <module name="SpringBootWebTemplate_main" target="1.8" />
       <module name="SpringBootWebTemplate_test" target="1.8" />
     </bytecodeTargetLevel>

@@ -1,25 +1,26 @@
 buildscript {
     ext{
-        javaVersion = 1.8
-        bootVersion = '2.0.5.RELEASE'
-        redissonVersion = '3.8.1'
-        guavaVsersion = '25.1-jre'
+        redissonVersion = '3.11.3'
+        guavaVsersion = '27.1-jre'
     }
     repositories {
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:$bootVersion")
     }
 }
 
-group 'joycai'
-version '1.0-SNAPSHOT'
+plugins {
+    id 'java'
+    id 'war'
+    id 'idea'
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+}
 
-apply plugin: 'war'
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
+group 'joycai'
+version '1.1-SNAPSHOT'
+
 apply plugin: 'io.spring.dependency-management'
 
 jar {
@@ -27,8 +28,8 @@ jar {
     version  = version
 }
 
-sourceCompatibility = javaVersion
-
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     jcenter()
@@ -36,25 +37,21 @@ repositories {
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:$bootVersion")
-    compile("org.springframework.boot:spring-boot-starter-aop:$bootVersion")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa:$bootVersion")
-    compile("mysql:mysql-connector-java:6.0.6")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-aop")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("mysql:mysql-connector-java")
 
-    compile("org.slf4j:slf4j-api:1.7.21")
-    compile("ch.qos.logback:logback-classic:1.1.7")
+    implementation("org.slf4j:slf4j-api:1.7.21")
+    implementation("ch.qos.logback:logback-classic:1.1.7")
 
-    compile("org.redisson:redisson:$redissonVersion")
-    compile("com.google.guava:guava:$guavaVsersion")
-    testCompile("org.springframework.boot:spring-boot-starter-test:$bootVersion")
+    implementation("org.redisson:redisson:$redissonVersion")
+    implementation("com.google.guava:guava:$guavaVsersion")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
-}
-
-task wrapper(type:Wrapper){
-    gradleVersion = '4.6'
 }
 
 task createDirs {
