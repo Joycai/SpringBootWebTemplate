@@ -19,12 +19,11 @@ public class ExceptionController {
      * 该方法捕获所有exception类型异常，并返回自定义结果，可以按照需要修改捕获的类型来分类处理各类异常
      *
      * @param e
-     * @return
+     * @return exception info
      */
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ResponseEntity exceptionHandler(Exception e){
-
-        return new ResponseEntity(e.getMessage(), HttpStatus.OK);
+        return new ResponseEntity<String>(e.getMessage(), HttpStatus.OK);
     }
 }

@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/git-SpringBootWebTemplate.iml" filepath="$PROJECT_DIR$/.idea/modules/git-SpringBootWebTemplate.iml" group="SpringBootWebTemplate" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/git-SpringBootWebTemplate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/git-SpringBootWebTemplate_main.iml" group="SpringBootWebTemplate" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/git-SpringBootWebTemplate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/git-SpringBootWebTemplate_test.iml" group="SpringBootWebTemplate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-SpringBootWebTemplate.iml" filepath="$PROJECT_DIR$/.idea/modules/github-SpringBootWebTemplate.iml" group="SpringBootWebTemplate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-SpringBootWebTemplate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/github-SpringBootWebTemplate_main.iml" group="SpringBootWebTemplate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-SpringBootWebTemplate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/github-SpringBootWebTemplate_test.iml" group="SpringBootWebTemplate" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate.iml" filepath="$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate.iml" group="SpringBootWebTemplate" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate_main.iml" group="SpringBootWebTemplate" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate_test.iml" group="SpringBootWebTemplate" />

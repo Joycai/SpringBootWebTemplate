@@ -18,7 +18,8 @@ import javax.sql.DataSource;
 public class DBConfig {
 
     /**
-     * boot 2.0+之后内置了HikariCP，因而更新了配置
+     * 在配置文件里写入url，username和password
+     *
      * @param url
      * @param username
      * @param password
@@ -28,8 +29,6 @@ public class DBConfig {
     public HikariDataSource getDataSource(@Value("#{ serviceConfig['mysql.url'] }") String url,
                                     @Value("#{ serviceConfig['mysql.username'] }") String username,
                                     @Value("#{ serviceConfig['mysql.password'] }") String password) {
-
-
         HikariDataSource ds = new HikariDataSource();
 
         ds.setJdbcUrl(url);
@@ -46,7 +45,8 @@ public class DBConfig {
     }
 
     /**
-     * 初始化redis
+     * 初始化redis，需要在配置文件里配置redis地址和密码
+     *
      * @param url
      * @param pwd
      * @return
