@@ -6,6 +6,8 @@
       <module name="git-SpringBootWebTemplate_test" target="1.8" />
       <module name="github-SpringBootWebTemplate_main" target="1.8" />
       <module name="github-SpringBootWebTemplate_test" target="1.8" />
+      <module name="IdeaProjects-SpringBootWebTemplate_main" target="1.8" />
+      <module name="IdeaProjects-SpringBootWebTemplate_test" target="1.8" />
       <module name="joycai-SpringBootWebTemplate_main" target="1.8" />
       <module name="joycai-SpringBootWebTemplate_test" target="1.8" />
       <module name="SpringBootWebTemplate_main" target="1.8" />

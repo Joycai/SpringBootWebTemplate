@@ -1,7 +1,7 @@
 buildscript {
     ext{
-        redissonVersion = '3.11.3'
-        guavaVsersion = '27.1-jre'
+        redissonVersion = '3.11.6'
+        guavaVsersion = '28.1-jre'
         slf4jVersion = '1.7.28'
         logbackVersion = '1.2.3'
     }
@@ -14,17 +14,20 @@ buildscript {
 }
 
 plugins {
-    id 'org.springframework.boot' version '2.2.1.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
     id 'war'
+    id 'idea'
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
 group 'joycai'
 version '1.1-SNAPSHOT'
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+java{
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 repositories {
     jcenter()
