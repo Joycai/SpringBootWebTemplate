@@ -37,6 +37,7 @@ public class Application {
      */
     @Autowired
     public Application(ApplicationArguments args) {
+        //如果入参包含release则表示为生产模式
         debugMode = !args.containsOption("release");
         List<String> files = args.getNonOptionArgs();
 

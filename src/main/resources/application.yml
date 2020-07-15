@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
