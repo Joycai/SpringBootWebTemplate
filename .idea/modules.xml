@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects-SpringBootWebTemplate.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects-SpringBootWebTemplate.iml" group="SpringBootWebTemplate" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects-SpringBootWebTemplate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects-SpringBootWebTemplate_main.iml" group="SpringBootWebTemplate" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects-SpringBootWebTemplate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects-SpringBootWebTemplate_test.iml" group="SpringBootWebTemplate" />
       <module fileurl="file://$PROJECT_DIR$/SpringBootWebTemplate.iml" filepath="$PROJECT_DIR$/SpringBootWebTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringBootWebTemplate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringBootWebTemplate_main.iml" group="SpringBootWebTemplate" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringBootWebTemplate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringBootWebTemplate_test.iml" group="SpringBootWebTemplate" />
@@ -17,6 +14,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate.iml" filepath="$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate.iml" group="SpringBootWebTemplate" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate_main.iml" group="SpringBootWebTemplate" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/joycai-SpringBootWebTemplate_test.iml" group="SpringBootWebTemplate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/joycai.SpringBootWebTemplate.iml" filepath="$PROJECT_DIR$/.idea/modules/joycai.SpringBootWebTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/joycai.SpringBootWebTemplate.main.iml" filepath="$PROJECT_DIR$/.idea/modules/joycai.SpringBootWebTemplate.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/joycai.SpringBootWebTemplate.test.iml" filepath="$PROJECT_DIR$/.idea/modules/joycai.SpringBootWebTemplate.test.iml" />
     </modules>
   </component>
 </project>
