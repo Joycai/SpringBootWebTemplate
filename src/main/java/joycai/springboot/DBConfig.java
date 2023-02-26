@@ -1,5 +1,6 @@
 package joycai.springboot;
 
+import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
@@ -26,22 +27,19 @@ public class DBConfig {
      * @return
      */
     @Bean(destroyMethod = "close")
-    public HikariDataSource getDataSource(@Value("#{ serviceConfig['mysql.url'] }") String url,
-                                    @Value("#{ serviceConfig['mysql.username'] }") String username,
-                                    @Value("#{ serviceConfig['mysql.password'] }") String password) {
-        HikariDataSource ds = new HikariDataSource();
-
-        ds.setJdbcUrl(url);
-        ds.setUsername(username);
-        ds.setPassword(password);
-        ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        ds.setConnectionTestQuery("SELECT 1");
-        ds.setReadOnly(false);
-        ds.setConnectionTimeout(30000);
-        ds.setValidationTimeout(10000);
-        ds.setMaximumPoolSize(25);
-
-        return ds;
+    public HikariDataSource getDataSource(@Value("#{ serviceConfig['jdbc.url'] }") String url,
+                                          @Value("#{ serviceConfig['jdbc.username'] }") String username,
+                                          @Value("#{ serviceConfig['jdbc.password'] }") String password) {
+        HikariConfig hikariConfig = new HikariConfig();
+        hikariConfig.setJdbcUrl(url);
+        hikariConfig.setUsername(username);
+        hikariConfig.setPassword(password);
+        hikariConfig.setConnectionTestQuery("SELECT 1");
+        hikariConfig.setReadOnly(false);
+        hikariConfig.setConnectionTimeout(30000);
+        hikariConfig.setValidationTimeout(10000);
+        hikariConfig.setMaximumPoolSize(25);
+        return new HikariDataSource(hikariConfig);
     }
 
     /**
@@ -59,6 +57,6 @@ public class DBConfig {
                 .setConnectTimeout(1000)
                 .setAddress("redis://" + url)
                 .setPassword(pwd);
-        return  Redisson.create(config);
+        return Redisson.create(config);
     }
 }
