@@ -1,4 +1,4 @@
-package joycai.springboot.util;
+package joycai.springboot.sample.util;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ResourceBundleMessageSource;
@@ -10,9 +10,9 @@ import java.util.Locale;
  */
 public class MessageLoader {
 
-    final static String bundleName = "message";
+    private final static String bundleName = "message";
 
-    static MessageLoader instance = null;
+    private static MessageLoader instance = null;
 
     public static MessageLoader getInstance() {
         if (instance == null) {

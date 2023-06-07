@@ -1,4 +1,4 @@
-package joycai.springboot;
+package joycai.springboot.sample.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;

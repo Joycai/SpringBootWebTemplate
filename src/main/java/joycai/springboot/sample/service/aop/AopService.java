@@ -1,4 +1,4 @@
-package joycai.springboot.service.aop;
+package joycai.springboot.sample.service.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -15,7 +15,7 @@ public class AopService {
     /**
      * 定义一个切面
      */
-    @Pointcut(value = "execution(* joycai.springboot.service.impl.UserAccountServiceImpl.*(..))")
+    @Pointcut(value = "execution(* joycai.springboot.sample.service.impl.UserAccountServiceImpl.*(..))")
     public void aspect() {
 
     }

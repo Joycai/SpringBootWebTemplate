@@ -1,4 +1,4 @@
-package joycai.springboot.controller;
+package joycai.springboot.sample.controller;
 
 import joycai.springboot.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;

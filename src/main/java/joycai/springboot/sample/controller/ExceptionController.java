@@ -1,4 +1,4 @@
-package joycai.springboot.controller;
+package joycai.springboot.sample.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

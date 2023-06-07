@@ -1,4 +1,4 @@
-package joycai.springboot;
+package joycai.springboot.sample.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -6,17 +6,17 @@ import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.sql.DataSource;
-
 @Configuration
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = "joycai.springboot.sample.db.repository")
+@EntityScan(basePackages = "joycai.springboot.sample.db.entity")
 @EnableTransactionManagement
-public class DBConfig {
+public class DataSourceConfig {
 
     /**
      * 在配置文件里写入url，username和password
@@ -27,9 +27,9 @@ public class DBConfig {
      * @return
      */
     @Bean(destroyMethod = "close")
-    public HikariDataSource getDataSource(@Value("#{ serviceConfig['jdbc.url'] }") String url,
-                                          @Value("#{ serviceConfig['jdbc.username'] }") String username,
-                                          @Value("#{ serviceConfig['jdbc.password'] }") String password) {
+    public HikariDataSource getDataSource(@Value("${jdbc.url}") String url,
+                                          @Value("${jdbc.username}") String username,
+                                          @Value("${jdbc.password}") String password) {
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setJdbcUrl(url);
         hikariConfig.setUsername(username);
@@ -50,9 +50,11 @@ public class DBConfig {
      * @return
      */
     @Bean(destroyMethod = "shutdown")
-    public RedissonClient getRedisson(@Value("#{ serviceConfig['redis.url'] }") String url, @Value("#{ serviceConfig['redis.pwd'] }") String pwd) {
+    public RedissonClient getRedisson(
+            @Value("${redis.url}") String url,
+            @Value("${redis.pwd}") String pwd
+    ) {
         Config config = new Config();
-
         config.useSingleServer().setConnectionPoolSize(200)
                 .setConnectTimeout(1000)
                 .setAddress("redis://" + url)

@@ -1,18 +1,24 @@
-package joycai.springboot.model;
+package joycai.springboot.sample.db.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "userAccount")
-public class UserEntity {
+@Table(name = "t_user_account", indexes = {
+        @Index(columnList = "userName", unique = true)
+})
+public class UserEntity implements Serializable {
+
+    private static final long serialVersionUID = 1000L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO )
-    Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    String userName;
+    @Column(length = 128)
+    private String userName;
 
-    String pwd;
+    private String pwd;
 
     public Long getId() {
         return id;

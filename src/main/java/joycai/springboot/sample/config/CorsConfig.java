@@ -1,4 +1,4 @@
-package joycai.springboot;
+package joycai.springboot.sample.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class MyConfig {
+public class CorsConfig {
 
     /**
      * 全局的cors配置<br/>
