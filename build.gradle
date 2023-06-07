@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'war'
-    id 'org.springframework.boot' version '2.7.9'
+    id 'org.springframework.boot' version '2.7.12'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
@@ -15,7 +15,10 @@ java{
 
 repositories {
     maven {
-        url = uri("https://repo.huaweicloud.com/repository/maven/")
+        url 'https://maven.aliyun.com/repository/public'
+    }
+    maven {
+        url "https://repo.huaweicloud.com/repository/maven/"
     }
     mavenCentral()
 }
@@ -23,6 +26,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
 
     implementation "org.slf4j:slf4j-api:1.7.+"
@@ -36,12 +40,13 @@ dependencies {
     }
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+    testImplementation 'org.springframework.security:spring-security-test'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"
 }
 
@@ -49,7 +54,8 @@ test {
     useJUnitPlatform()
 }
 
-task createDirs {
+tasks.register("createDirs"){
+    group "help"
     sourceSets*.java.srcDirs*.each { it.mkdirs() }
     sourceSets*.resources.srcDirs*.each { it.mkdirs() }
 }
