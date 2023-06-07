@@ -20,22 +20,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest(classes = {TestController.class})
-@ImportAutoConfiguration(value = SecurityConfig.class)
+@SpringBootTest(classes = {ControllerRunner.class})
 @AutoConfigureMockMvc
 public class TestControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @MockBean
-    private UserRepository userRepository;
-
-    @MockBean
-    private EntityManagerFactory entityManagerFactory;
-
-    @MockBean
-    private RedissonClient redisson;
 
     @MockBean
     private UserAccountService userAccountService;

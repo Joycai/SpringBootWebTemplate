@@ -8,23 +8,22 @@ import joycai.springboot.sample.service.UserAccountService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.Optional;
 
-@SpringBootTest
+@SpringBootTest(classes = JPARunner.class)
 @AutoConfigureTestDatabase
 public class TestJPA {
     @Autowired
     UserRepository userRepository;
     @Autowired
     UserAccountService userAccountService;
-    @MockBean
-    RedissonConfig redissonConfig;
-    @MockBean
-    DataSourceConfig dataSourceConfig;
+
 
     @Test
     void baseTest() {
