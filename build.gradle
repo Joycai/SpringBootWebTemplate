@@ -34,6 +34,7 @@ dependencies {
 
     implementation "org.redisson:redisson:3+"
     implementation "com.google.guava:guava:29.0-jre"
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
     runtimeOnly ("org.postgresql:postgresql") {
         exclude group: "com.google.protobuf", module: "protobuf-java"
