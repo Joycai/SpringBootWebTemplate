@@ -1,7 +1,7 @@
 jdbc:
-  url: ""
-  username: "root"
-  password: ""
+  url: "jdbc:postgresql://localhost:5432/mydb"
+  username: "pguser"
+  password: "password"
 redis:
-  url: 127.0.0.1
-  password:
+  url: 127.0.0.1:6379
+  pwd:
