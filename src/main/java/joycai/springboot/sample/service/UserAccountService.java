@@ -1,4 +1,4 @@
-package joycai.springboot.service;
+package joycai.springboot.sample.service;
 
 public interface UserAccountService {
 

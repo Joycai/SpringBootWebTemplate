@@ -2,7 +2,7 @@ package joycai.springboot.sample.service.impl;
 
 
 import joycai.springboot.sample.db.repository.UserRepository;
-import joycai.springboot.service.UserAccountService;
+import joycai.springboot.sample.service.UserAccountService;
 import org.springframework.stereotype.Service;
 
 @Service("UserAccountService")

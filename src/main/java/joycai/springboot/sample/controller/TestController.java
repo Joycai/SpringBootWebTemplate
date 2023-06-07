@@ -1,6 +1,6 @@
 package joycai.springboot.sample.controller;
 
-import joycai.springboot.service.UserAccountService;
+import joycai.springboot.sample.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +17,7 @@ public class TestController {
 
     @RequestMapping("test")
     public String test() {
-        return userAccountService.countUser() + "";
+        return String.valueOf(userAccountService.countUser());
     }
 
 }

@@ -2,7 +2,6 @@ package joycai.springboot.sample.db.repository;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
@@ -10,7 +9,7 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 /**
  * 自定义repo的样例
  */
-@Repository
+//@Repository
 public class MyRepo {
 
     private final JdbcTemplate jdbcTemplate;

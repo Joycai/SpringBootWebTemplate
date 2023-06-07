@@ -3,6 +3,8 @@ package joycai.springboot.sample.db.repository;
 import joycai.springboot.sample.db.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
+import java.util.Optional;
 
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+    Optional<UserEntity> findByUserName(String userName);
 }
