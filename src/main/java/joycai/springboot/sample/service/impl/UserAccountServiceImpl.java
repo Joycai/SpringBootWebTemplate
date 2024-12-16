@@ -5,7 +5,7 @@ import joycai.springboot.sample.db.repository.UserRepository;
 import joycai.springboot.sample.service.UserAccountService;
 import org.springframework.stereotype.Service;
 
-@Service("UserAccountService")
+@Service
 public class UserAccountServiceImpl implements UserAccountService {
 
     private final UserRepository userRepository;
