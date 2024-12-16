@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 @Aspect
 public class AopService {
 
-    private Logger logger = LoggerFactory.getLogger(AopService.class);
+    private final Logger logger = LoggerFactory.getLogger(AopService.class);
 
     /**
      * 定义一个切面

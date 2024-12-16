@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    private UserAccountService userAccountService;
+    private final UserAccountService userAccountService;
 
     @Autowired
     public TestController(UserAccountService userAccountService) {

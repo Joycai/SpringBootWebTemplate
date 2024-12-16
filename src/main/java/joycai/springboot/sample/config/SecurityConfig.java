@@ -14,7 +14,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // @formatter:off
         http.authorizeHttpRequests((authorize) -> authorize
-                        .antMatchers("/**").permitAll()
+                        .antMatchers("/test").permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic().disable()
